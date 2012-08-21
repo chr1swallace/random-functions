@@ -1,3 +1,0 @@
-* Random Functions
-
-[[ggplot-heatmap.org]]
