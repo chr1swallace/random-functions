@@ -1,0 +1,28 @@
+* A ggplot2 heatmap function
+
+I have close to 20 years experience with base graphics in R/Splus.  I
+can do almost anything I like, but [[http://had.co.nz/ggplot2/][ggplot2]] definitely wins on visually
+pleasing stakes.  It's also a nice way of thinking about graphics,
+once you understand all the components.  But it's also a whole other
+world.  With base graphics, you can take multiple datasets in any
+shape, add bits and bobs together to get a plot.  You don't have to
+mess with your data at all, but you may write many lines of plotting
+code.  With ggplot2, the emphasis is more on getting your data in a
+sensible shape for plotting, and then doing the plot simply in a one
+liner.  At least that is how it works for qplot, and the ability to
+facet easily without a loop is just lovely.  In order to properly
+learn ggplot I have decided I will not use base graphics for a month.
+
+The first plot I had to make after this decision was a heatmap.  I
+toyed with using [[http://cran.r-project.org/web/packages/pheatmap/index.html][pheatmap]] which is [[http://rgm2.lab.nig.ac.jp/RGM_results/pheatmap:pheatmap/pheatmap_001_med.png][very pretty]], but decided that was
+breaking my promise on the first day.  I couldn't find any good
+ggplot2 heatmap function either (one that showed dendrograms and
+heatmap).  So I created one, and on the way learnt more than I thought
+I wanted to know about [[http://www.stat.auckland.ac.nz/~paul/grid/grid.html][grid graphics]] and viewports.
+
+It was also hard to find out exactly how to remove all axes etc using
+ggplot2.  These links helped:
++ http://stackoverflow.com/questions/6528180/ggplot2-plot-without-axes-legends-etc
++ http://had.co.nz/ggplot2/docs/opts.html
+
+The result is in [[ggplot-heatmap.R]].
