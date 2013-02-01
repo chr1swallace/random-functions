@@ -20,9 +20,11 @@ p <- ggplot() +
 geom_segment(data=segment(ddata), aes(x=x, y=y, xend=xend, yend=yend)) +
 labs(x = NULL, y = NULL) + theme_dendro()
 if(row) {
-p <- p + scale_x_continuous(expand=c(0.5/length(ddata$labels$x),0)) + coord_flip()
+p <- p +
+scale_x_continuous(expand=c(0.5/length(ddata$labels$x),0)) +
+coord_flip()
 } else {
-p <- p + scale_x_continuous(breaks = 1:ncol(x),labels=colnames(x)) +
+p <- p +
 theme(axis.text.x = element_text(angle = 90, hjust = 1))
 }
 return(p)
@@ -91,6 +93,7 @@ col.dendro <- dendro_data(as.dendrogram(col.hc),type="rectangle")
  
 ## dendro plots
 col.plot <- mydplot(col.dendro, col=TRUE, labels=TRUE) +
+scale_x_continuous(breaks = 1:ncol(x),labels=colnames(x)) +
 theme(plot.margin = unit(c(0,0,0,0), "lines"))
 row.plot <- mydplot(row.dendro, row=TRUE, labels=FALSE) +
 theme(plot.margin = unit(rep(0, 4), "lines"))
@@ -111,3 +114,18 @@ theme(plot.margin = unit(rep(0, 4), "lines"))
 ret <- list(col=col.plot,row=row.plot,centre=centre.plot)
 invisible(ret)
 }
+ 
+## test run
+## simulate data
+library(mvtnorm)
+sigma=matrix(0,10,10)
+sigma[1:4,1:4] <- 0.6
+sigma[6:10,6:10] <- 0.8
+diag(sigma) <- 1
+X <- rmvnorm(n=100,mean=rep(0,10),sigma=sigma)
+ 
+## make plot
+p <- ggheatmap(X)
+ 
+## display plot
+ggheatmap.show(p)
