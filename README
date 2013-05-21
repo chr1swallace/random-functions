@@ -1,4 +1,5 @@
-## random-functions
+random-functions
+===
 
 R functions for which I want some version control
 
@@ -8,7 +9,8 @@ Perhaps one day they some of these functions will come together in proper R pack
 
 I keep some notes about these functions here: http://cwcode.wordpress.com
 
-## Functions
+Functions
+---
 
 ggplot-heatmap.R makes heatmaps in ggplot2
 getArgs.R makes parsing commandArgs() easy for use in Rscripts
