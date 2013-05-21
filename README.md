@@ -12,5 +12,5 @@ I keep some notes about these functions here: http://cwcode.wordpress.com
 Functions
 ---
 
-ggplot-heatmap.R makes heatmaps in ggplot2
-getArgs.R makes parsing commandArgs() easy for use in Rscripts
+- ggplot-heatmap.R makes heatmaps in ggplot2
+- getArgs.R makes parsing commandArgs() easy for use in Rscripts
