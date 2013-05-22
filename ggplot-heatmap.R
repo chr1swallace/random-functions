@@ -99,8 +99,11 @@ row.plot <- mydplot(row.dendro, row=TRUE, labels=FALSE) +
 theme(plot.margin = unit(rep(0, 4), "lines"))
  
 ## order of the dendros
-col.ord <- match(col.dendro$labels$label, colnames(x))
-row.ord <- match(row.dendro$labels$label, rownames(x))
+## corrected the next two lines as there is no third component
+#col.ord <- match(col.dendro$labels$label, colnames(x))
+#row.ord <- match(row.dendro$labels$label, rownames(x))
+col.ord <- match(col.dendro$labels, colnames(x))
+row.ord <- match(row.dendro$labels, rownames(x))
 xx <- x[row.ord,col.ord]
 dimnames(xx) <- NULL
 xx <- melt(xx)
