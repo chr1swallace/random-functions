@@ -16,4 +16,4 @@ Functions
 - getArgs.R makes parsing commandArgs() easy for use in Rscripts
 - abf.R calculates approximate BayesFactors from p values and MAF.
   See Wakefield, J (2009) Bayes factors for genome-wide association
-  studies: comparison with p-values.  ## Genetic Epidemiology 33: 79–86.
+  studies: comparison with p-values.  Genetic Epidemiology 33: 79–86.
