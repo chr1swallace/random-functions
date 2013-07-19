@@ -4,9 +4,9 @@
 ##'
 ##' Usage:
 ##' call the R script thus
-##'   ./myfile.R --args myarg=something
+##'   ./myfile.R --args --myarg=something
 ##' or
-##'   R CMD BATCH --args myarg=something myfile.R
+##'   R CMD BATCH --args --myarg=something myfile.R
 ##'
 ##' Then in R do
 ##'   myargs <- getArgs()
@@ -19,9 +19,10 @@
 ##' @title getArgs
 ##' @param verbose print verbage to screen 
 ##' @param defaults a named list of defaults, optional
+##' @param numeric names of arguments that should be converted from character to numeric, optional
 ##' @return a named list
 ##' @author Chris Wallace
-getArgs <- function(verbose=FALSE, defaults=NULL) {
+getArgs <- function(verbose=FALSE, defaults=NULL, numeric=NULL) {
   myargs <- gsub("^--","",commandArgs(TRUE))
   setopts <- !grepl("=",myargs)
   if(any(setopts))
@@ -41,7 +42,14 @@ getArgs <- function(verbose=FALSE, defaults=NULL) {
       myargs[ defs.needed ] <- defaults[ defs.needed ]
     }
   }
-
+  
+  ## numerics
+  if(!is.null(numeric)) {
+    numeric <- intersect(numeric, names(myargs))
+    if(length(numeric))
+      myargs[numeric] <- lapply(myargs[numeric], as.numeric)
+  }
+  
   ## verbage
   if(verbose) {
     cat("read",length(myargs),"named args:\n")
