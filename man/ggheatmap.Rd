@@ -1,0 +1,38 @@
+\name{ggheatmap}
+\alias{ggheatmap}
+\title{generate a heatmap + dendrograms, ggplot2 style}
+\usage{
+  ggheatmap(x, hm.colours = my.colours)
+}
+\arguments{
+  \item{x}{data matrix}
+
+  \item{hm.colours}{vector of colours (optional)}
+}
+\value{
+  invisibly returns a list of ggplot2 objects. Display them
+  with ggheatmap.show()
+}
+\description{
+  generate a heatmap + dendrograms, ggplot2 style
+}
+\examples{
+## test run
+## simulate data
+library(mvtnorm)
+sigma=matrix(0,10,10)
+sigma[1:4,1:4] <- 0.6
+sigma[6:10,6:10] <- 0.8
+diag(sigma) <- 1
+X <- rmvnorm(n=100,mean=rep(0,10),sigma=sigma)
+
+## make plot
+p <- ggheatmap(X)
+
+## display plot
+ggheatmap.show(p)
+}
+\author{
+  Chris Wallace
+}
+

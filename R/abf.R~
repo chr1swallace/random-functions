@@ -1,6 +1,18 @@
-## this is a function to calculation approximate BayesFactors from p values and MAF - for reference see Wakefield, J (2009) Bayes factors for genome-wide association studies: comparison with p-values.
-## Genetic Epidemiology 33: 79–86.
-
+##'Calculate approximate Bayes factors from p values and MAF
+##'
+##' this is a function to calculate approximate Bayes factors from p
+##' values and MAF - for reference see Wakefield, J (2009) Bayes
+##' factors for genome-wide association studies: comparison with
+##' p-values. Genetic Epidemiology 33: 79–86.
+##' @title abf
+##' @param p p value
+##' @param maf minor allele frequency
+##' @param n0 number of controls
+##' @param n1 number of cases
+##' @param scale0 by default, =n0
+##' @param scale1 by default, =n1
+##' @return ABF
+##' @author Chris Wallace
 abf <- function(p,maf, n0=9500, n1=6670, scale0=n0, scale1=n1) { # evidence for null - ie low ABF => support for alternative
 z <- qnorm(p/2, lower.tail=FALSE)
 x0 <- 0; x1 <- 1; x2 <- 2 # multiplicative model

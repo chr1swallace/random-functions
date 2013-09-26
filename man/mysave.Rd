@@ -1,0 +1,25 @@
+\name{mysave}
+\alias{mysave}
+\title{mysave}
+\usage{
+  mysave(..., file)
+}
+\arguments{
+  \item{...}{passed to save}
+
+  \item{file}{passed to save}
+}
+\value{
+  return value of save(..., file=file)
+}
+\description{
+  saving into non-existant directories
+}
+\details{
+  if path points to a non existant directory, creates it
+  before saving as usual
+}
+\author{
+  Chris Wallace
+}
+

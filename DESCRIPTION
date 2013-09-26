@@ -1,0 +1,23 @@
+Package: randomFunctions
+Title: Random functions useful to have to hand
+Description: Random functions useful to have to hand
+Version: 0.1
+Authors@R: person("Chris","Wallace",email="cew54@cam.ac.uk",role=c("cre","aut"))
+Imports:
+    ggplot2,
+    ggdendro,
+    reshape
+Suggests:
+    mvtnorm
+Depends:
+    R (>= 3.0.1)
+License: GPL (>= 2)
+LazyData: true
+Collate:
+    'abf.R'
+    'binding.R'
+    'getArgs.R'
+    'ggplot-heatmap.R'
+    'random-functions-package.R'
+    'textvenn.R'
+    'mysave.R'
