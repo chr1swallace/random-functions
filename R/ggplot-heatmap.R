@@ -107,18 +107,20 @@ row.hc <- hclust(dist(x), "ward")
 col.hc <- hclust(dist(t(x)), "ward")
 row.dendro <- dendro_data(as.dendrogram(row.hc),type="rectangle")
 col.dendro <- dendro_data(as.dendrogram(col.hc),type="rectangle")
+
+## order of the dendros (part 1 of 2)
+col.ord <- match(col.dendro$labels$label, colnames(x))
+row.ord <- match(row.dendro$labels$label, rownames(x))
+xx <- x[row.ord,col.ord]
  
 ## dendro plots
 col.plot <- mydplot(col.dendro, col=TRUE, labels=TRUE) +
-scale_x_continuous(breaks = 1:ncol(x),labels=colnames(x)) +
+scale_x_continuous(breaks = 1:ncol(x),labels=colnames(xx)) +
 theme(plot.margin = unit(c(0,0,0,0), "lines"))
 row.plot <- mydplot(row.dendro, row=TRUE, labels=FALSE) +
 theme(plot.margin = unit(rep(0, 4), "lines"))
  
-## order of the dendros
-col.ord <- match(col.dendro$labels$label, colnames(x))
-row.ord <- match(row.dendro$labels$label, rownames(x))
-xx <- x[row.ord,col.ord]
+## order of the dendros (part 2 of 2)
 dimnames(xx) <- NULL
 xx <- melt(xx)
  
