@@ -4,7 +4,7 @@
 ##' @param A vector
 ##' @param B vector
 ##' @param quiet if FALSE (default) report to screen
-##' @return invisibly returns a list containing items unique to A, the intersection, and intems unique to B
+##' @return invisibly returns a list containing items unique to A, the intersection, and items unique to B
 ##' @export
 ##' @author Chris Wallace
 textvenn <- function(A,B,quiet=FALSE) {
