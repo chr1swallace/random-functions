@@ -2,7 +2,7 @@
 \alias{ggheatmap.show}
 \title{Display a ggheatmap}
 \usage{
-  ggheatmap.show(L, col.width = 0.2, row.width = 0.2)
+ggheatmap.show(L, col.width = 0.2, row.width = 0.2)
 }
 \arguments{
   \item{L}{a list with 3 named plots: col, row, centre,
@@ -13,14 +13,14 @@
   dendrogram. If 0, don't print the dendrogram}
 }
 \value{
-  no return value, side effect of displaying plot in
-  current device
+no return value, side effect of displaying plot in current
+device
 }
 \description{
-  this function sets up some viewports, and tries to plot
-  the dendrograms to line up with the heatmap
+this function sets up some viewports, and tries to plot the
+dendrograms to line up with the heatmap
 }
 \author{
-  Chris Wallace
+Chris Wallace
 }
 

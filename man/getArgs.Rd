@@ -2,7 +2,7 @@
 \alias{getArgs}
 \title{getArgs}
 \usage{
-  getArgs(verbose = FALSE, defaults = NULL, numeric = NULL)
+getArgs(verbose = FALSE, defaults = NULL, numeric = NULL)
 }
 \arguments{
   \item{verbose}{print verbage to screen}
@@ -13,23 +13,23 @@
   converted from character to numeric, optional}
 }
 \value{
-  a named list
+a named list
 }
 \description{
-  commandArgs parsing
+commandArgs parsing
 }
 \details{
-  return a named list of command line arguments
+return a named list of command line arguments
 
-  Usage: call the R script thus ./myfile.R --args
-  --myarg=something or R CMD BATCH --args --myarg=something
-  myfile.R
+Usage: call the R script thus ./myfile.R --args
+--myarg=something or R CMD BATCH --args --myarg=something
+myfile.R
 
-  Then in R do myargs <- getArgs() and myargs will be a
-  named list > str(myargs) List of 2 $ file : chr
-  "myfile.R" $ myarg: chr "something"
+Then in R do myargs <- getArgs() and myargs will be a named
+list > str(myargs) List of 2 $ file : chr "myfile.R" $
+myarg: chr "something"
 }
 \author{
-  Chris Wallace
+Chris Wallace
 }
 

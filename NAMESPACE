@@ -1,3 +1,4 @@
+export(Cochran.Armitage.test)
 export(abf)
 export(getArgs)
 export(ggheatmap)

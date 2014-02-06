@@ -3,10 +3,10 @@
 \alias{random-functions-package}
 \title{title randomFunctions}
 \description{
-  title randomFunctions
+title randomFunctions
 }
 \author{
-  Chris Wallace <chris.wallace@cimr.cam.ac.uk>
+Chris Wallace <chris.wallace@cimr.cam.ac.uk>
 }
 \keyword{package}
 

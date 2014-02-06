@@ -2,8 +2,7 @@
 \alias{abf}
 \title{abf}
 \usage{
-  abf(p, maf, n0 = 9500, n1 = 6670, scale0 = n0,
-    scale1 = n1)
+abf(p, maf, n0 = 9500, n1 = 6670, scale0 = n0, scale1 = n1)
 }
 \arguments{
   \item{p}{p value}
@@ -19,18 +18,18 @@
   \item{scale1}{by default, =n1}
 }
 \value{
-  ABF
+ABF
 }
 \description{
-  Calculate approximate Bayes factors from p values and MAF
+Calculate approximate Bayes factors from p values and MAF
 }
 \details{
-  this is a function to calculate approximate Bayes factors
-  from p values and MAF - for reference see Wakefield, J
-  (2009) Bayes factors for genome-wide association studies:
-  comparison with p-values. Genetic Epidemiology 33: 79–86.
+this is a function to calculate approximate Bayes factors
+from p values and MAF - for reference see Wakefield, J
+(2009) Bayes factors for genome-wide association studies:
+comparison with p-values. Genetic Epidemiology 33: 79–86.
 }
 \author{
-  Chris Wallace
+Chris Wallace
 }
 

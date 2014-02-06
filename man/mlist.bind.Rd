@@ -2,7 +2,7 @@
 \alias{mlist.bind}
 \title{mlist.bind}
 \usage{
-  mlist.bind(l, direction = "c")
+mlist.bind(l, direction = "c")
 }
 \arguments{
   \item{l}{a list of matrices}
@@ -11,19 +11,19 @@
   rowbinding}
 }
 \value{
-  a matrix
+a matrix
 }
 \description{
-  Bind a list of vectors of equal row or col dim together
+Bind a list of vectors of equal row or col dim together
 }
 \details{
-  Useful for very large lists, when
-  \code{do.call("rbind",l)} would be unacceptably slow.
+Useful for very large lists, when \code{do.call("rbind",l)}
+would be unacceptably slow.
 }
 \author{
-  Chris Wallace
+Chris Wallace
 }
 \seealso{
-  \link{vlist.bind} for binding lists of vectors
+\link{vlist.bind} for binding lists of vectors
 }
 
