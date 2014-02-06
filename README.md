@@ -24,3 +24,6 @@ I keep some notes about some of these functions at my
 -   abf.R calculates approximate BayesFactors from p values and MAF.
     See Wakefield, J (2009) Bayes factors for genome-wide association
     studies: comparison with p-values.  Genetic Epidemiology 33: 79–86.
+
+-   Cochran.Armitage.mod.R Cochran Armitage score test with Mantel
+    extension.
