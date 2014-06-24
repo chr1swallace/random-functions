@@ -3,6 +3,7 @@
 ##' @param x character or numeric vector 
 ##' @return sanitized character
 ##' @export
+##' @author Chris Wallace
 ##' @examples
 ##' p<-10^(-seq(1,10))
 ##' format.pval(p) # scientific notation
