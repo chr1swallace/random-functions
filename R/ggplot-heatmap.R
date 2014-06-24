@@ -110,7 +110,7 @@ col.dendro <- dendro_data(as.dendrogram(col.hc),type="rectangle")
  
 ## dendro plots
 col.plot <- mydplot(col.dendro, col=TRUE, labels=TRUE) +
-scale_x_continuous(breaks = 1:ncol(x),labels=colnames(x)) +
+scale_x_continuous(breaks = 1:ncol(x),labels=col.hc$labels[col.hc$order]) +
 theme(plot.margin = unit(c(0,0,0,0), "lines"))
 row.plot <- mydplot(row.dendro, row=TRUE, labels=FALSE) +
 theme(plot.margin = unit(rep(0, 4), "lines"))
