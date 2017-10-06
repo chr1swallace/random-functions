@@ -11,19 +11,30 @@
 ##' Then in R do
 ##'   myargs <- getArgs()
 ##' and myargs will be a named list
+##'
 ##' > str(myargs)
 ##' List of 2
 ##' $ file : chr "myfile.R"
 ##' $ myarg: chr "something"
 ##'
+##' To supply a vector as an argument, simply repeat the argument's name:
+##'
+##' ... --args f=kk f=pp ll
+##'
+##' > str(myargs)
+##' List of 2
+##' $ f : Named chr [1:2] "kk" "pp"
+##'  ..- attr(*, "names")= chr [1:2] "f" "f"
+##' $ ll: logi TRUE
+##' 
 ##' @title getArgs
-##' @param verbose print verbage to screen 
 ##' @param defaults a named list of defaults, optional
+##' @param verbose print verbage to screen 
 ##' @param numeric names of arguments that should be converted from character to numeric, optional
 ##' @return a named list
 ##' @export
 ##' @author Chris Wallace
-getArgs <- function(verbose=FALSE, defaults=NULL, numeric=NULL) {
+getArgs <- function(defaults=NULL, verbose=FALSE, numeric=NULL) {
   myargs <- gsub("^--","",commandArgs(TRUE))
   setopts <- !grepl("=",myargs)
   if(any(setopts))
@@ -49,6 +60,18 @@ getArgs <- function(verbose=FALSE, defaults=NULL, numeric=NULL) {
     numeric <- intersect(numeric, names(myargs))
     if(length(numeric))
       myargs[numeric] <- lapply(myargs[numeric], as.numeric)
+  }
+
+  ## merge repeated args
+  if(any(duplicated(names(myargs)))) {
+      unm <- unique(names(myargs))
+      for(nm in unm) {
+          wh <- which(names(myargs)==nm)
+          if(length(wh)==1)
+              next
+          myargs[[wh[1]]] <- unlist(myargs[wh])
+          myargs[wh[-1]] <- NULL
+      }
   }
   
   ## verbage

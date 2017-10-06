@@ -20,7 +20,7 @@ textvenn <- function(A,B,verbose=FALSE,quiet=FALSE) {
     cat("intersection:\t",length(AandB),"\n")
     if(verbose)
         cat(AandB,"\n")
-    cat("set B:\t",length(BnotB),"\n")
+    cat("set B:\t",length(BnotA),"\n")
     if(verbose)
         cat(BnotA,"\n")
   }

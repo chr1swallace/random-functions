@@ -26,7 +26,7 @@ vlist.bind <- function(l,direction="c") {
   }
   return(ret)
 }
-##' Bind a list of vectors of equal row or col dim together 
+##' Bind a list of matrices of equal row or col dim together 
 ##'
 ##' Useful for very large lists, when \code{do.call("rbind",l)} would be unacceptably slow.
 ##' @title mlist.bind
