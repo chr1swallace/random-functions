@@ -1,4 +1,4 @@
-##'Calculate approximate Bayes factors from p values and MAF
+##' Calculate approximate Bayes factors from p values and MAF
 ##'
 ##' this is a function to calculate approximate Bayes factors from p
 ##' values and MAF - for reference see Wakefield, J (2009) Bayes

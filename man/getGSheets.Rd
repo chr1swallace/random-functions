@@ -14,6 +14,9 @@ getGSheets(url, saveas = NULL)
 \value{
 data.table
 }
+\description{
+get google sheets as data.table
+}
 \author{
 Chris Wallace
 }

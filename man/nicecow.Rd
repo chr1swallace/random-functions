@@ -13,10 +13,10 @@ nicecow(p)
 nicer plot object
 }
 \description{
-.. content for \description{} (no empty lines) ..
+nicer cowplot
 }
 \details{
-.. content for \details{} ..
+nicer cows
 }
 \examples{
 library(ggplot2)

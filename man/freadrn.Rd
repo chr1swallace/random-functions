@@ -12,6 +12,9 @@ freadrn(f)
 \value{
 fread object, ignoring first column (rownames)
 }
+\description{
+fread for files created with write.csv(..., row.names=TRUE)
+}
 \author{
 Chris Wallace
 }

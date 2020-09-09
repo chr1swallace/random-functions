@@ -1,6 +1,6 @@
-##' .. content for \description{} (no empty lines) ..
+##' nicer cowplot
 ##'
-##' .. content for \details{} ..
+##' nicer cows
 ##' @title nicify cowplot theme
 ##' @param p plot object
 ##' @return nicer plot object
@@ -13,5 +13,8 @@
 ##' nicecow(p)
 ##' @author Chris Wallace
 ##' @export
-nicecow <- function(p) p + theme(plot.title=element_text(hjust=0)) + background_grid()
-
+nicecow <- function(p)
+  p +
+    theme_cowplot() +
+    theme(plot.title=element_text(hjust=0)) +
+    background_grid()
