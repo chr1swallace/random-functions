@@ -13,13 +13,21 @@
 ##' @author Chris Wallace
 runorload <- function(file, objects, ...) {
   if(!file.exists(file)) {
+    message("file not found: ",file)
+    message("running...")
     ## exprs <- #c(as.list(
       exprs <- match.call(expand.dots = FALSE)$...
     ## ,list)
     lapply(exprs, function(e) eval(e, env=.GlobalEnv))
     save(list=objects, file=file)
   } else {
-    load(file, .GlobalEnv)
+    message("loading from ",file)
+    obj=load(file, .GlobalEnv)
+    if(!all(objects %in% obj)) {
+      warning("not all listed objects found in ",file,
+              "\nexpected: ",paste(objects,collapse=" "),
+              "\nfound: ",paste(obj,collapse=" "))
+    }
   }
 }
 
