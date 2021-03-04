@@ -75,9 +75,9 @@ getArgs <- function(defaults=NULL, verbose=FALSE, numeric=NULL) {
   }
   
   ## verbage
-  if(verbose) {
+  ## if(verbose) {
     cat("read",length(myargs),"named args:\n")
     print(myargs)
-  }
+  ## }
   myargs
 }
